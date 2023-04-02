@@ -19,7 +19,7 @@ else
 su - zimbra -c 'zmcontrol stop'
 
 /etc/scripts/stop
-certbot  certonly --standalone --non-interactive --agree-tos --email $letsencrypt_email -d $mail_server_url --hsts --preferred-chain "ISRG Root X1"
+certbot  certonly --standalone --non-interactive --agree-tos --email $letsencrypt_email -d $mail_server_url --hsts --preferred-chain "ISRG Root X1" --key-type rsa
 /etc/scripts/firewall
 
 cp /etc/letsencrypt/live/$mail_server_url/privkey.pem /opt/zimbra/ssl/zimbra/commercial/commercial.key

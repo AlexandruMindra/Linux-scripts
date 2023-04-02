@@ -24,7 +24,7 @@ rm /opt/zimbra/ssl/letsencrypt/*
 su - zimbra -c 'zmcontrol stop'
 
 /etc/scripts/stop
-certbot  renew --standalone --non-interactive --hsts --preferred-chain "ISRG Root X1"
+certbot  renew --standalone --non-interactive --hsts --preferred-chain "ISRG Root X1" --key-type rsa
 /etc/scripts/firewall
 
 cp /etc/letsencrypt/live/$mail_server_url/privkey.pem /opt/zimbra/ssl/zimbra/commercial/commercial.key
